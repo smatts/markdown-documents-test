@@ -22,11 +22,12 @@ jobs:
         with:
           path: ./public
       - name: Commit files
-        uses: actions/checkout@v3
         run: |
           pwd
           ls -al
           cd /data
+          pwd
+          ls -al
           git --version
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"

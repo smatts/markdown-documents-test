@@ -9,7 +9,7 @@ jobs:
   prepare-and-build-documents:
     runs-on: ubuntu-latest
     container:
-      image: registry.gitlab.com/tibhannover/oer/markdown-pandoc-processor
+      image: registry.gitlab.com/tibhannover/oer/markdown-pandoc-processor/23-add-liascript-button
     steps:
       - uses: actions/checkout@v3
       - run: |
@@ -23,6 +23,7 @@ jobs:
           path: ./public
       - name: Commit files
         run: |
+          git --version
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git pull

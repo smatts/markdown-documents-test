@@ -1,21 +1,56 @@
 ---
-name: "My OER Course"
+'@context': http://schema.org/
+about:
+- id: https://w3id.org/kim/hochschulfaechersystematik/n001
+  prefLabel:
+    de: Ägyptologie
+    en: Egyptology
+    uk: Єгиптологія
+creativeWorkStatus: Published
 creator:
-  - givenName: "Max"
-    familyName: "Mustermann"
-  - givenName: "Maxi"
-    familyName: "Mustermann"
-publisher:
-  givenName: "Max"
-  familyName: "Mustermann"
+- '@type': Person
+  affiliation:
+    id: https://ror.org/04xfq0f34
+    name: Rheinisch-Westfälische Technische Hochschule (RWTH) Aachen
+    type: Organization
+  familyName: Lu
+  givenName: Lale
+  id: orcid.org/abc123
+  type: Person
+dateModified: '2023-12-05T20:11:22Z'
+datePublished: '2023-06-08'
+description: I'm testing
+educationalLevel:
+- id: https://w3id.org/kim/educationalLevel/level_A
+  prefLabel:
+    de: Hochschule
+    en: University
+id: https://a.de
+image: https://placehold.it/300x400
+inLanguage:
+- de
+- nl
 keywords:
-  - "Geometry"
-  - "Pythagoras"
-  - "Mathematics"
-description: "Draft for a course"
-inLanguage: "en"
-version: 1.0
-license: "https://creativecommons.org/publicdomain/zero/1.0/"
-thumbnailUrl: http://placehold.it/100x100
-learningResourceType: "Course"
-creativeWorkStatus: "Draft" # Incomplete, Draft, Published
+- Stichwort
+- See
+learningResourceType:
+- id: https://w3id.org/kim/hcrt/course
+  prefLabel:
+    da: Kursus
+    de: Kurs
+    en: Course
+    es: Curso
+    fi: Kurssi
+    fr: Cours
+    nl: Cursus
+    uk: Курс
+license:
+  id: https://creativecommons.org/publicdomain/zero/1.0/deed.de
+name: Test
+publisher:
+- '@type': Person
+  familyName: Mustermann
+  givenName: Max
+- '@type': Person
+  name: Lili Rose
+type: LearningResource

@@ -22,6 +22,7 @@ jobs:
         with:
           path: ./public
       - name: Commit files
+        uses: actions/checkout@v3
         run: |
           pwd
           ls -al

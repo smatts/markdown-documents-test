@@ -25,12 +25,9 @@ jobs:
         run: |
           pwd
           ls -al
-          cd /data
-          pwd
-          ls -al
           git --version
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git pull
           git status
           git add -f document.md

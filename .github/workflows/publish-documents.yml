@@ -15,18 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          sed -i '19i\
-                <meta http-equiv="refresh" content="0;URL='"$url"manual/'">
-          ' _site/index.html
           /build/process.sh
           ls -l
+          mkdir build
+          cp -r * build
           mkdir .public
           cp -r * .public
           mv .public public
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
+      - uses: github-actions-x/commit@v2.9
+        with:
+          # Github Token with commit access
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Specific files to add.
+          files: build/
+                
 
   # Deployment job
   deploy:

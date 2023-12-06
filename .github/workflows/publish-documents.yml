@@ -4,7 +4,7 @@ on: [push]
 env:
   OUTPUT_FILENAME: "document"
   USER_AGENT: "$GITHUB_REPOSITORY ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY)"
-  url: ${{steps.deploy.outputs.page_url}}
+  url: ${{jobs.deploy.outputs.page_url}}
 
 jobs:
   prepare-and-build-documents:

@@ -17,8 +17,6 @@ jobs:
       - run: |
           /build/process.sh
           ls -l
-          mkdir build
-          cp -r * build
           mkdir .public
           cp -r * .public
           mv .public public

@@ -30,7 +30,7 @@ jobs:
           # Github Token with commit access
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # Specific files to add.
-          files: build/
+          files: ./public
                 
 
   # Deployment job

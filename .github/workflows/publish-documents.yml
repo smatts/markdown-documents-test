@@ -8,11 +8,17 @@ env:
 jobs:
   prepare-and-build-documents:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     container:
       image: registry.gitlab.com/tibhannover/oer/markdown-pandoc-processor/23-add-liascript-button
     steps:
       - uses: actions/checkout@v3
       - run: |
+          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          sed -i '19i\
+                <meta http-equiv="refresh" content="0;URL='"$url"manual/'">
+          ' _site/index.html
           /build/process.sh
           ls -l
           mkdir .public

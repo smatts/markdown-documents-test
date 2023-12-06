@@ -21,22 +21,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-      - name: Commit files
-        run: |
-          pwd
-          ls -al
-          git --version
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git pull
-          git status
-          git add -f document.md
-          git commit -m "Upload prepared document"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
 
   # Deployment job
   deploy:
